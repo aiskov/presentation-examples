@@ -13,13 +13,13 @@ public class FutureExample {
             sleep(3);
             echo("Ready to join 1!");
             return 1;
-        }).fork();
+        });
 
         ForkJoinTask<Integer> task2 = pool.submit(() -> {
             sleep(2);
             echo("Ready to join! 2");
             return 2;
-        }).fork();
+        });
 
 
         int sum = Stream.of(task1, task2).mapToInt(ForkJoinTask::join).sum();

@@ -29,18 +29,13 @@ public class SyncSingleton {
         private static Foo INSTANCE = null;
 
         public static Foo instance() {
-            if (INSTANCE == null)
+            if (INSTANCE == null) {
                 synchronized (Foo.class) {
                     if (INSTANCE == null) {
-                        try {
-                            TimeUnit.SECONDS.sleep(1);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-
                         INSTANCE = new Foo();
                     }
                 }
+            }
 
             return INSTANCE;
         }

@@ -7,7 +7,7 @@ import static etc.Utils.sleep;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 public class ControlledLockControl {
-    static Lock value = new ReentrantLock();
+    static Lock value = new ReentrantLock(true);
 
     public static void main(String... args) {
         inOtherThreads(10, () -> {

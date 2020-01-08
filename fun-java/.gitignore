@@ -3,6 +3,8 @@
 *.log
 *.ctxt
 .mtj.tmp/
+*.jar
+*.war
 *.nar
 *.ear
 *.zip
@@ -13,9 +15,3 @@ hs_err_pid*
 *.iml
 out
 gen
-
-build
-gradle
-.gradle
-gradlew
-gradlew.bat

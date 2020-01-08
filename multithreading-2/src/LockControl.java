@@ -6,7 +6,7 @@ import static etc.Utils.inOtherThreads;
 import static etc.Utils.sleep;
 
 public class LockControl {
-    static Lock value = new ReentrantLock();
+    static Lock value = new ReentrantLock(false);
 
     public static void main(String... args) {
         inOtherThreads(10, () -> {

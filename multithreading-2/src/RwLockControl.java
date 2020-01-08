@@ -10,7 +10,7 @@ public class RwLockControl {
     static ReadWriteLock lock = new ReentrantReadWriteLock();
 
     public static void main(String... args) {
-        inCyclicDaemonThreads(2, () -> {
+        inCyclicDaemonThreads(20, () -> {
             lock.readLock().lock();
             echo("Read start");
             sleep(3);
@@ -18,7 +18,7 @@ public class RwLockControl {
             lock.readLock().unlock();
         });
 
-        inOtherThreads(10, () -> {
+        inOtherThreads(2, () -> {
             lock.writeLock().lock();
             echo("Write locked");
             sleep(2);
