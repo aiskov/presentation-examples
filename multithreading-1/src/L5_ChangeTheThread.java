@@ -1,13 +1,11 @@
 import java.util.concurrent.TimeUnit;
 
-public class ChangeTheThread {
+@SuppressWarnings("ALL")
+public class L5_ChangeTheThread {
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello World!");
-
-        Thread thread = new Thread(new MorrrrreThreads());
+        Thread thread = new Thread(() -> {});
         thread.start();
-
 
         thread.setName("!!!");
         thread.setPriority(1);
@@ -23,13 +21,5 @@ public class ChangeTheThread {
         thread.stop();
 
         TimeUnit.SECONDS.sleep(30);
-    }
-
-    static class MorrrrreThreads implements Runnable {
-
-        @Override
-        public void run() {
-            System.out.println("Hello World! From other thread");
-        }
     }
 }

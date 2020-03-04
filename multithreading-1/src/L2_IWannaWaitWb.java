@@ -1,10 +1,8 @@
 import java.util.concurrent.TimeUnit;
 
-public class IWannaWaitWithoutBullshit {
-
+@SuppressWarnings("ALL")
+public class L2_IWannaWaitWb {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello World!");
-
         TimeUnit.SECONDS.sleep(5);
     }
 }

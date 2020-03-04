@@ -1,17 +1,14 @@
-import java.util.concurrent.TimeUnit;
+import static etc.Utils.echo;
 
-public class SyncSingleton {
-
+@SuppressWarnings("ALL")
+public class L8_SyncSingleton {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-
         new Thread(new WaitThreads(1)).start();
         new Thread(new WaitThreads(2)).start();
         new Thread(new WaitThreads(3)).start();
     }
 
     static class WaitThreads implements Runnable {
-
         final int id;
 
         WaitThreads(int id) {
@@ -20,28 +17,32 @@ public class SyncSingleton {
 
         @Override
         public void run() {
-            System.out.println("I want to test!");
-            Foo.instance().test();
+            echo("[%s] I want to test!", this.id);
+            Foo.instance(this.id).test(this.id);
         }
     }
 
     static class Foo {
         private static Foo INSTANCE = null;
 
-        public static Foo instance() {
+        public Foo(int id) {
+            echo("[%s] Created!", id);
+        }
+
+        public static Foo instance(int id) {
             if (INSTANCE == null) {
                 synchronized (Foo.class) {
                     if (INSTANCE == null) {
-                        INSTANCE = new Foo();
+                        INSTANCE = new Foo(id);
                     }
                 }
             }
 
             return INSTANCE;
         }
-        public void test() {
-            System.out.println("Reached!");
+
+        public void test(int id) {
+            echo("[%s] Reached!", id);
         }
     }
-
 }

@@ -1,27 +1,20 @@
-import java.util.concurrent.TimeUnit;
+import static etc.Utils.echo;
+import static etc.Utils.sleep;
 
-public class Sync {
-
+@SuppressWarnings("ALL")
+public class L7_Sync {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-
         new Thread(new WaitThreads(1)).start();
         new Thread(new WaitThreads(2)).start();
         new Thread(new WaitThreads(3)).start();
     }
 
-    public static synchronized void test() {
-        System.out.println("Reached!");
-
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public static synchronized void test(int id) {
+        echo("[%s] Reached!", id);
+        sleep(5);
     }
 
     static class WaitThreads implements Runnable {
-
         final int id;
 
         WaitThreads(int id) {
@@ -30,8 +23,8 @@ public class Sync {
 
         @Override
         public void run() {
-            System.out.println("I want to test!");
-            Sync.test();
+            echo("[%s] I want to test!", this.id);
+            L7_Sync.test(this.id);
         }
     }
 }

@@ -1,6 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
-public class WaitAndNotifyAlternative {
+@SuppressWarnings("ALL")
+public class L6_WaitAndNotifySatory {
 
     static String target = "TARGET";
 
@@ -13,12 +14,13 @@ public class WaitAndNotifyAlternative {
 
         TimeUnit.SECONDS.sleep(1);
 
-        synchronized ("I got you JAva") {
+        synchronized (target) {
             System.out.println("Let's unblock one");
             target.notify();
-
+        }
             TimeUnit.SECONDS.sleep(1);
 
+        synchronized (target) {
             System.out.println("Let's unblock all");
             target.notifyAll();
         }

@@ -1,6 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
-public class WaitAndNotifyThread {
+@SuppressWarnings("ALL")
+public class L6_WaitAndNotify {
 
     static String target = "TARGET";
 
