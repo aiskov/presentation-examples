@@ -1,3 +1,5 @@
+package locks;
+
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -5,7 +7,7 @@ import static etc.Utils.echo;
 import static etc.Utils.inOtherThreads;
 import static etc.Utils.sleep;
 
-public class LockControl {
+public class L1_LockControl {
     static Lock value = new ReentrantLock(false);
 
     public static void main(String... args) {

@@ -1,8 +1,10 @@
+package atomic;
+
 import static etc.Utils.echo;
 import static etc.Utils.inOtherThreads;
 
-public class IdGenerator {
-    static volatile int value = 1;
+public class L1_IdGenerator {
+    static int value = 1;
 
     public static void main(String... args) {
         inOtherThreads(10, () -> {

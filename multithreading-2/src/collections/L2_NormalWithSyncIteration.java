@@ -1,13 +1,16 @@
+package collections;
+
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import static etc.Utils.echo;
 import static etc.Utils.inOtherThread;
 import static etc.Utils.sleep;
 
-public class CopyOnWriteIteration {
+public class L2_NormalWithSyncIteration {
     public static void main(String... args) {
-        List<Integer> data = new CopyOnWriteArrayList<>();
+        List<Integer> data = Collections.synchronizedList(new LinkedList<>());
 
         data.add(1);
         data.add(2);
@@ -26,8 +29,8 @@ public class CopyOnWriteIteration {
 
         echo("Get iterator");
         for (Integer i : data) {
-            sleep(2);
             echo("Read %d", i);
+            sleep(2);
         }
     }
 }

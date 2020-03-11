@@ -8,10 +8,6 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 public class Utils {
     private static AtomicInteger ID = new AtomicInteger(1);
 
-    public static void echo(String text) {
-        System.out.println(Thread.currentThread().getName() + ": " + text);
-    }
-
     public static void echo(String text, Object... args) {
         System.out.println(Thread.currentThread().getName() + ": " + format(text, args));
     }

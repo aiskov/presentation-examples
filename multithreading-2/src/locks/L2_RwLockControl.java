@@ -1,3 +1,5 @@
+package locks;
+
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
@@ -6,7 +8,7 @@ import static etc.Utils.inCyclicDaemonThreads;
 import static etc.Utils.inOtherThreads;
 import static etc.Utils.sleep;
 
-public class RwLockControl {
+public class L2_RwLockControl {
     static ReadWriteLock lock = new ReentrantReadWriteLock();
 
     public static void main(String... args) {

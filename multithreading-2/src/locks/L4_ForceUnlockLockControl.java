@@ -1,3 +1,5 @@
+package locks;
+
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -6,7 +8,7 @@ import static etc.Utils.inOtherThreads;
 import static etc.Utils.sleep;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
-public class ForceUnlockLockControl {
+public class L4_ForceUnlockLockControl {
     static Lock lock = new ReentrantLock();
 
     public static void main(String... args) {

@@ -1,13 +1,15 @@
-import java.util.LinkedList;
+package collections;
+
 import java.util.List;
+import java.util.Vector;
 
 import static etc.Utils.echo;
 import static etc.Utils.inOtherThread;
 import static etc.Utils.sleep;
 
-public class NormalIteration {
+public class L6_VectorIteration {
     public static void main(String... args) {
-        List<Integer> data = new LinkedList<>();
+        List<Integer> data = new Vector<>();
 
         data.add(1);
         data.add(2);
@@ -26,8 +28,8 @@ public class NormalIteration {
 
         echo("Get iterator");
         for (Integer i : data) {
-            sleep(2);
             echo("Read %d", i);
+            sleep(2);
         }
     }
 }

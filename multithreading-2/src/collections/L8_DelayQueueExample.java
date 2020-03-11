@@ -1,3 +1,5 @@
+package collections;
+
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
@@ -5,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import static etc.Utils.echo;
 import static etc.Utils.sleep;
 
-public class DelayQueueExample {
+public class L8_DelayQueueExample {
     public static void main(String... args) {
         DelayQueue<DelayedImp> data = new DelayQueue<>();
 
@@ -25,8 +27,6 @@ public class DelayQueueExample {
             echo("Obtained");
             i++;
         }
-
-
     }
 
     static class DelayedImp implements Delayed {

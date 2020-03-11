@@ -1,3 +1,5 @@
+package jobs;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -6,7 +8,7 @@ import java.util.stream.Stream;
 import static etc.Utils.echo;
 import static etc.Utils.sleep;
 
-public class ForkJoin {
+public class L3_Executor {
     static ExecutorService executor = Executors.newSingleThreadExecutor();
 
     public static void main(String... args) {
