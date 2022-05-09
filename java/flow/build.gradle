@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+group = 'aiskov.demo'
+version = '1.0'
+sourceCompatibility = '16'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    implementation 'io.vavr:vavr:0.10.4'
+}
